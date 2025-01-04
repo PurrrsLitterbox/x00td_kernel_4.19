@@ -16,6 +16,23 @@
       "message": "ASB-2024-06 can boot, but after merging with ASB-2024-11, it cannot boot",
       "revId": "5a4d38fa82a550900651463f7a85c028edcba3e2",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "056fe419_96dccddf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33515
+      },
+      "writtenOn": "2025-01-04T08:40:12Z",
+      "side": 1,
+      "message": "Logs https://review.lineageos.org/c/LineageOS/android_kernel_qcom_sdm660/+/407994",
+      "revId": "5a4d38fa82a550900651463f7a85c028edcba3e2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
