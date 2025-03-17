@@ -189,7 +189,6 @@ static void *typec_mux_match(struct device_connection *con, int ep, void *data)
 	bool match;
 	int nval;
 	u16 *val;
-	int ret;
 	int i;
 
 	if (!con->fwnode) {
@@ -224,10 +223,10 @@ static void *typec_mux_match(struct device_connection *con, int ep, void *data)
 	if (!val)
 		return ERR_PTR(-ENOMEM);
 
-	ret = fwnode_property_read_u16_array(con->fwnode, "svid", val, nval);
-	if (ret < 0) {
+	nval = fwnode_property_read_u16_array(con->fwnode, "svid", val, nval);
+	if (nval < 0) {
 		kfree(val);
-		return ERR_PTR(ret);
+		return ERR_PTR(nval);
 	}
 
 	for (i = 0; i < nval; i++) {
