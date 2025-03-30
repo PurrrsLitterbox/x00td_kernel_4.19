@@ -3512,8 +3512,7 @@ static bool __bfq_bfqq_expire(struct bfq_data *bfqd, struct bfq_queue *bfqq,
 		 * Resort priority tree of potential close cooperators.
 		 * See comments on bfq_pos_tree_add_move() for the unlikely().
 		 */
-		if (unlikely(!bfqd->nonrot_with_queueing &&
-			     !RB_EMPTY_ROOT(&bfqq->sort_list)))
+		if (unlikely(!bfqd->nonrot_with_queueing))
 			bfq_pos_tree_add_move(bfqd, bfqq);
 	}
 

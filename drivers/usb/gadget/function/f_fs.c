@@ -1979,7 +1979,7 @@ static int functionfs_bind(struct ffs_data *ffs, struct usb_composite_dev *cdev)
 	ffs_log("enter: state %d setup_state %d flag %lu", ffs->state,
 		ffs->setup_state, ffs->flags);
 
-	if (WARN_ON(ffs->state != FFS_ACTIVE
+	if ((ffs->state != FFS_ACTIVE
 		 || test_and_set_bit(FFS_FL_BOUND, &ffs->flags)))
 		return -EBADFD;
 
@@ -2101,7 +2101,6 @@ static void ffs_func_eps_disable(struct ffs_function *func)
 	count = func->ffs->eps_count;
 	epfile = func->ffs->epfiles;
 	ep = func->eps;
-
 	while (count--) {
 		/* pending requests get nuked */
 		if (likely(ep->ep))
